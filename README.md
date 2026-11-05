@@ -45,3 +45,7 @@ java -cp out com.florachain.CoreVerification
 | FR-U08 营销活动 | PromotionStrategy 及其实现、PromotionEngine |
 | FR-D01 运费规则 | DeliveryFeeRule 及其实现 |
 | FR-D02 派单 | DispatchStrategy、AreaDispatchStrategy |
+
+## 库存扣减评审修复记录
+- release：回补失败时恢复预扣登记并抛出异常，允许重试；释放数量以预扣时登记的数量为准
+- FlashSaleService.buy：预扣之后任何失败都回补库存并返回失败
